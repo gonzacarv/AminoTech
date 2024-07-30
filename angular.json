@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/aminotech-app",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -52,12 +52,6 @@
               "outputHashing": "all"
             },
             "development": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
-                }
-              ],
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -73,10 +67,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "aminotech-app:build:production"
+              "browserTarget": "aminotech-app:build:production"
             },
             "development": {
-              "buildTarget": "aminotech-app:build:development"
+              "browserTarget": "aminotech-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "aminotech-app:build"
+            "browserTarget": "aminotech-app:build"
           }
         },
         "test": {
